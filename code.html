@@ -1,0 +1,229 @@
+<html>
+ <head>
+  <title>
+   Query Editor
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 400px;
+            background-color: #2a2a2a;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+        .sidebar .form-group {
+            margin-bottom: 20px;
+        }
+        .sidebar .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .sidebar .form-group input,
+        .sidebar .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: #3a3a3a;
+            border: 1px solid #555;
+            color: #fff;
+        }
+        .sidebar .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .sidebar .form-group .btn {
+            background-color: #3a3a3a;
+            border: 1px solid #555;
+            color: #fff;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        .sidebar .form-group .btn:hover {
+            background-color: #555;
+        }
+        .sidebar .form-group .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .sidebar .form-group .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .map-container {
+            flex-grow: 1;
+            position: relative;
+        }
+        .map-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .map-container .publish-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #007bff;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .map-container .publish-btn:hover {
+            background-color: #0056b3;
+        }
+        .map-container .user-icon {
+            position: absolute;
+            top: 20px;
+            right: 80px;
+            background-color: #3a3a3a;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .map-container .user-icon:hover {
+            background-color: #555;
+        }
+        .map-container .zoom-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .map-container .zoom-controls button {
+            background-color: #3a3a3a;
+            border: none;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+        .map-container .zoom-controls button:hover {
+            background-color: #555;
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="sidebar">
+    <h2>
+     Query editor
+    </h2>
+    <div class="form-group">
+     <label for="from">
+      From
+     </label>
+     <select id="from">
+      <option>
+       Query
+      </option>
+     </select>
+     <input type="text" value="AlexAcct/query-editor"/>
+     <input id="with-geo" type="checkbox"/>
+     <label for="with-geo">
+      With Geo
+     </label>
+    </div>
+    <div class="form-group">
+     <label>
+      Select
+     </label>
+     <button class="btn">
+      Choose a Column
+     </button>
+     <button class="btn">
+      + Expression
+     </button>
+     <input placeholder="Expression" type="text"/>
+     <input placeholder="Column" type="text"/>
+     <input placeholder="Alias" type="text"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Where
+     </label>
+     <button class="btn">
+      + Column
+     </button>
+     <button class="btn">
+      + Geo
+     </button>
+     <button class="btn">
+      + Expression
+     </button>
+     <button class="btn">
+      + Or
+     </button>
+     <input placeholder="Column" type="text"/>
+     <input placeholder="Column" type="text"/>
+     <input placeholder="Value" type="text"/>
+     <input placeholder="Or" type="text"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Where
+     </label>
+     <button class="btn">
+      + Column
+     </button>
+     <button class="btn">
+      + Expression
+     </button>
+     <input placeholder="Choose a Column" type="text"/>
+    </div>
+    <div class="form-group">
+     <label>
+      Additional options
+     </label>
+     <button class="btn">
+      +
+     </button>
+    </div>
+    <div class="form-group">
+     <button class="btn btn-primary">
+      Use as query source
+     </button>
+     <button class="btn">
+      Cancel
+     </button>
+     <button class="btn btn-primary">
+      Pause updates
+     </button>
+    </div>
+   </div>
+   <div class="map-container">
+    <img alt="Map with various colored regions and markers" height="600" src="https://storage.googleapis.com/a1aa/image/DHW4mg7DzeUWMSfyDokXEoTClvXM6MnTz60HQ13z6IUb6aIUA.jpg" width="800"/>
+    <button class="publish-btn">
+     Publish
+    </button>
+    <button class="user-icon">
+     LA
+    </button>
+    <div class="zoom-controls">
+     <button>
+      +
+     </button>
+     <button>
+      -
+     </button>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
